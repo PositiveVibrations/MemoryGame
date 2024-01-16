@@ -161,7 +161,7 @@ def main(num_revealed_squares):
     pygame.mixer.init()
 
     # Load the audio files for correct and incorrect guesses
-    correct_sound = pygame.mixer.Sound(os.path.join("media", "correct2.wav"))
+    correct_sound = pygame.mixer.Sound(os.path.join("media", "correct3.mp3"))
     incorrect_sound = pygame.mixer.Sound(os.path.join("media", "incorrect2.wav"))
     # Load the audio file for level up
     levelup_sound = pygame.mixer.Sound(os.path.join("media", "levelup.mp3"))
