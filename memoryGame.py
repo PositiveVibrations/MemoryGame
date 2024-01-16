@@ -59,11 +59,23 @@ def get_user_guess(grid, guess_row, guess_col, revealed_squares, lives, score, c
         print("Already guessed.")
         return False, lives, score  # No change in lives or score for already guessed squares
     else:
-        print("Incorrect guess.")
-        grid[guess_row][guess_col]['color'] = (128, 0, 0)  # Dark red for incorrect
-        grid[guess_row][guess_col]['face_up'] = True
-        incorrect_sound.play()  # Play the incorrect sound effect
-        return False, lives - 1, score
+        #check if the incorrect square was already guessed
+        if grid[guess_row][guess_col]['guessed']:
+            print("Already guessed.")
+            return False, lives, score
+        elif lives == 1:  # Check if this is the last life
+            print("Game over.")
+            grid[guess_row][guess_col]['color'] = (128, 0, 0)
+            grid[guess_row][guess_col]['face_up'] = True
+            incorrect_sound.play()
+            return False, lives - 1, score
+        else:
+            print("Incorrect guess.")
+            grid[guess_row][guess_col]['color'] = (128, 0, 0)  # Dark red for incorrect
+            grid[guess_row][guess_col]['face_up'] = True
+            grid[guess_row][guess_col]['guessed'] = True  # Mark as guessed
+            incorrect_sound.play()  # Play the incorrect sound effect
+            return False, lives - 1, score
 
 def get_grid_position(mouse_x, mouse_y, grid_size, square_size, offset_x, offset_y):
     col = (mouse_x - offset_x) // (square_size + 10)
@@ -77,9 +89,7 @@ def determine_next_round(grid_size, num_revealed_squares):
 
     if next_num_revealed_squares > grid_size * grid_size // 2:
         grid_size += 1  # Increase the grid size if more than half are green
-        # Check if the incremented number of green squares is too large for the new grid
-        if next_num_revealed_squares > grid_size * grid_size:
-            next_num_revealed_squares = max(3, (grid_size * grid_size) // 4)
+        
 
     return grid_size, next_num_revealed_squares
 
