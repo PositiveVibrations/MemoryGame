@@ -1,7 +1,5 @@
 # Memory Challenge Game
 
-![Memory Challenge Logo](doc/github.png)
-
 ## About
 Memory Challenge is an engaging and addictive memory game designed to enhance cognitive skills. The game increases in complexity, providing an ever-evolving challenge to the player's memory.
 
