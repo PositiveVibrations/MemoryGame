@@ -92,13 +92,13 @@ def get_user_guess(grid, guess_row, guess_col, revealed_squares, lives, score, c
             return False, lives, score
         elif lives == 1:  # Check if this is the last life
             print("Game over.")
-            grid[guess_row][guess_col]['color'] = COLOR_SCHEME['grid_incorrect']  # Orange for incorrect
+            grid[guess_row][guess_col]['color'] = COLOR_SCHEME['grid_incorrect']  
             grid[guess_row][guess_col]['face_up'] = True
             incorrect_sound.play()
             return False, lives - 1, score
         else:
             print("Incorrect guess.")
-            grid[guess_row][guess_col]['color'] = COLOR_SCHEME['grid_incorrect']  # Orange for incorrect
+            grid[guess_row][guess_col]['color'] = COLOR_SCHEME['grid_incorrect'] 
             grid[guess_row][guess_col]['face_up'] = True
             grid[guess_row][guess_col]['guessed'] = True  # Mark as guessed
             incorrect_sound.play()  # Play the incorrect sound effect
