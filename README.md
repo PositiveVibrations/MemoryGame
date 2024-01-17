@@ -12,7 +12,6 @@ Memory Challenge is an engaging and addictive memory game designed to enhance co
 - **User-Friendly Interface**: Simple and intuitive interface, ensuring a seamless gaming experience.
 - **High Score Tracking**: Keeps track of your high scores to monitor your progress over time.
 - **Dynamic Grid Sizes**: The grid size increases as you progress, adding to the complexity and fun.
-- **Persistent Gameplay**: Your progress is saved, so you can pick up where you left off.
 
 ## Installation
 To install and play the Memory Challenge game:
