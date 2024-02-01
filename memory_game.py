@@ -269,8 +269,12 @@ def main():
                             guesses_made += 1
                             if correct:
                                 correct_guesses += 1  # Increment correct_guesses for correct guesses
+                                #update the game information
+                                display_game_info(screen, level, score, high_score, lives, ui_height)
                             else:
                                 misses += 1  # Increment misses for incorrect guesses
+                                #update the game information
+                                display_game_info(screen, level, score, high_score, lives, ui_height)
                             draw_grid(screen, grid, screen_size, ui_height)
 
                             pygame.display.update()
